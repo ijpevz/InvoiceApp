@@ -1,1 +1,137 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+
+  <div class="dashboard-header">
+
+    <div>
+      <h1>Dashboard</h1>
+      <p>Overview of your invoice activity.</p>
+    </div>
+
+    <button
+      mat-flat-button
+      color="primary"
+      routerLink="/invoices/create">
+
+      <mat-icon>add</mat-icon>
+
+      Create Invoice
+
+    </button>
+
+  </div>
+
+
+  <div class="stats-grid">
+
+    <mat-card class="stat-card">
+
+      <div class="stat-icon">
+        <mat-icon>receipt</mat-icon>
+      </div>
+
+      <div class="stat-content">
+
+        <span>Total Invoices</span>
+
+        <strong>
+          {{ totalInvoices() }}
+        </strong>
+
+      </div>
+
+    </mat-card>
+
+
+    <mat-card class="stat-card">
+
+      <div class="stat-icon">
+        <mat-icon>payments</mat-icon>
+      </div>
+
+      <div class="stat-content">
+
+        <span>Total Sales</span>
+
+        <strong>
+          ₱{{ totalSales() | number:'1.2-2' }}
+        </strong>
+
+      </div>
+
+    </mat-card>
+
+
+    <mat-card class="stat-card">
+
+      <div class="stat-icon">
+        <mat-icon>pending</mat-icon>
+      </div>
+
+      <div class="stat-content">
+
+        <span>Pending Invoices</span>
+
+        <strong>
+          {{ pendingInvoices() }}
+        </strong>
+
+      </div>
+
+    </mat-card>
+
+
+    <mat-card class="stat-card">
+
+      <div class="stat-icon">
+        <mat-icon>verified</mat-icon>
+      </div>
+
+      <div class="stat-content">
+
+        <span>BIR Accepted</span>
+
+        <strong>
+          {{ birAccepted() }}
+        </strong>
+
+      </div>
+
+    </mat-card>
+
+  </div>
+
+
+  <div class="dashboard-grid">
+
+    <mat-card>
+
+      <mat-card-header>
+        <mat-card-title>Recent Invoices</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <p>No invoice data available yet.</p>
+
+      </mat-card-content>
+
+    </mat-card>
+
+
+    <mat-card>
+
+      <mat-card-header>
+        <mat-card-title>BIR Transmission</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+
+        <p>Transmission information will appear here.</p>
+
+      </mat-card-content>
+
+    </mat-card>
+
+  </div>
+
+</div>
